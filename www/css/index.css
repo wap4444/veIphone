@@ -43,8 +43,13 @@ body {
     padding:0px;
     text-transform:uppercase;
     width:100%;
+     padding-top: constant(safe-area-inset-top); /* iOS 11.0 */
+    padding-top: env(safe-area-inset-top); /* iOS 11.2 */
 }
-
+.yourFooterClass {
+ margin-bottom: constant(safe-area-inset-bottom); /* iOS 11.0 */
+ margin-bottom: env(safe-area-inset-bottom); /* iOS 11.2 */
+}
 /* Portrait layout (default) */
 .app {
     background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
