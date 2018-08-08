@@ -37,7 +37,7 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-	    var ref = cordova.InAppBrowser.open('https://elecor.kz/?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+	    var ref = cordova.InAppBrowser.open('https://elecor.kz', '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
