@@ -37,14 +37,26 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-	    var ref = cordova.InAppBrowser.open('https://elecor.kz', '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+function didReceiveRemoteNotificationCallBack(jsonData) {}
+function didOpenRemoteNotificationCallBack(jsonData) {}       
+        //Настройка ПУШЕЙ ДЛЯ АЙФОНА
+        var iosSettings = {};
+        iosSettings["kOSSettingsKeyAutoPrompt"] = true;
+        iosSettings["kOSSettingsKeyInAppLaunchURL"] = true;
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+        //ПОДКЛЮЧЕНИЕ ПУШЕЙ 
+           window.plugins.OneSignal
+          .startInit("338ecc0f-8620-437d-9ed3-9cd12d5976d9")
+          .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
+          .handleNotificationOpened(didOpenRemoteNotificationCallBack)
+          .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
+          .iOSSettings(iosSettings)
+          .endInit();
+        
+window.plugins.OneSignal.getIds(function(ids) {
+ipush = ids.userId;
+localStorage.ipush=ipush;
+var ref = cordova.InAppBrowser.open('https://elecor.kz/?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+});
     }
 };
