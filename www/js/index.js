@@ -37,26 +37,6 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-function didReceiveRemoteNotificationCallBack(jsonData) {}
-function didOpenRemoteNotificationCallBack(jsonData) {}       
-        //Настройка ПУШЕЙ ДЛЯ АЙФОНА
-        var iosSettings = {};
-        iosSettings["kOSSettingsKeyAutoPrompt"] = true;
-        iosSettings["kOSSettingsKeyInAppLaunchURL"] = true;
-
-        //ПОДКЛЮЧЕНИЕ ПУШЕЙ 
-           window.plugins.OneSignal
-          .startInit("52fd2532-f4de-48bd-a818-c918662346cd")
-          .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
-          .handleNotificationOpened(didOpenRemoteNotificationCallBack)
-          .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
-          .iOSSettings(iosSettings)
-          .endInit();
-        
-window.plugins.OneSignal.getIds(function(ids) {
-ipush = ids.userId;
-    alert(ipush);
 var ref = cordova.InAppBrowser.open('http://top-star.kz/fr7/?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
-});
     }
 };
