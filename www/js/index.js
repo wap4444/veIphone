@@ -46,7 +46,7 @@ function didOpenRemoteNotificationCallBack(jsonData) {}
 
         //ПОДКЛЮЧЕНИЕ ПУШЕЙ 
            window.plugins.OneSignal
-          .startInit("338ecc0f-8620-437d-9ed3-9cd12d5976d9")
+          .startInit("52fd2532-f4de-48bd-a818-c918662346cd")
           .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
           .handleNotificationOpened(didOpenRemoteNotificationCallBack)
           .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
@@ -55,8 +55,8 @@ function didOpenRemoteNotificationCallBack(jsonData) {}
         
 window.plugins.OneSignal.getIds(function(ids) {
 ipush = ids.userId;
-localStorage.ipush=ipush;
-var ref = cordova.InAppBrowser.open('https://elecor.kz/?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+    alert(ipush);
+var ref = cordova.InAppBrowser.open('http://top-star.kz/fr7/?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 });
     }
 };
