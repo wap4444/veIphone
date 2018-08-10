@@ -45,6 +45,6 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-        $('.app').load('http://top-star.kz/fr7');
+var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
     }
 };
