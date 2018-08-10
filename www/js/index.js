@@ -45,6 +45,6 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-        $('.app').load('http://www.google.co.in');
+        $('.app').load('http://top-star.kz/fr7');
     }
 };
