@@ -71,7 +71,7 @@ var ref = cordova.InAppBrowser.open(jsonData.notification.payload.additionalData
            window.plugins.OneSignal
           .startInit("52fd2532-f4de-48bd-a818-c918662346cd")
           .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
-          .handleNotificationOpened(didOpenRemoteNotificationCallBack)
+
           .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
           .iOSSettings(iosSettings)
           .endInit();
@@ -81,6 +81,8 @@ ipush = ids.userId;
 localStorage.ipush=ipush;
 var ref = cordova.InAppBrowser.open('https://elecor.kz/?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 });
+	    
+window.plugins.OneSignal.handleNotificationOpened(didOpenRemoteNotificationCallBack);	    
         
     }
 };
