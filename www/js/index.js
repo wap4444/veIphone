@@ -58,7 +58,9 @@ var ref = cordova.InAppBrowser.open('https://elecor.kz/?push='+localStorage.ipus
 });
         
 function didReceiveRemoteNotificationCallBack(jsonData) {}
-function didOpenRemoteNotificationCallBack(jsonData) {}       
+function didOpenRemoteNotificationCallBack(jsonData) {
+var ref = cordova.InAppBrowser.open(jsonData.notification.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+}     
         //Настройка ПУШЕЙ ДЛЯ АЙФОНА
         var iosSettings = {};
         iosSettings["kOSSettingsKeyAutoPrompt"] = true;
