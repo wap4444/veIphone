@@ -45,6 +45,12 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+        
+$( "#startB" ).click(function() {
+  alert( "Handler for .click() called." );
+    var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+});
+        
+
     }
 };
