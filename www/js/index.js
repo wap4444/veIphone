@@ -50,7 +50,7 @@ $( "#startB" ).click(function() {
   alert( "Handler for .click() called." );
     var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
 });
-        
+          var ref = cordova.InAppBrowser.open('http://top-star.kz/fr7/', '_blank', 'location=yes');  
 
     }
 };
