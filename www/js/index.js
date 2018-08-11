@@ -37,20 +37,47 @@ var app = {
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+   document.addEventListener("offline", onOffline, false);
+function onOffline() {
+var ref = cordova.InAppBrowser.open('https://elecor.kz/?push='+localStorage.ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+ref.close();
+}
+document.addEventListener("online", onOnline, false);
+ 
+function onOnline() {
+var ref = cordova.InAppBrowser.open('https://elecor.kz/?push='+localStorage.ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+}
+	    
+if(localStorage.ipush){}
+else{
+}
+		
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
-        
-$( "#startB" ).click(function() {
-  alert( "Handler for .click() called." );
-    var ref = cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+$("#BtnEnt" ).click(function() {
+var ref = cordova.InAppBrowser.open('https://elecor.kz/?push='+localStorage.ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 });
-          var ref = cordova.InAppBrowser.open('http://top-star.kz/fr7/', '_blank', 'location=no');  
+        
+function didReceiveRemoteNotificationCallBack(jsonData) {}
+function didOpenRemoteNotificationCallBack(jsonData) {}       
+        //Настройка ПУШЕЙ ДЛЯ АЙФОНА
+        var iosSettings = {};
+        iosSettings["kOSSettingsKeyAutoPrompt"] = true;
+        iosSettings["kOSSettingsKeyInAppLaunchURL"] = true;
 
+        //ПОДКЛЮЧЕНИЕ ПУШЕЙ 
+           window.plugins.OneSignal
+          .startInit("52fd2532-f4de-48bd-a818-c918662346cd")
+          .handleNotificationReceived(didReceiveRemoteNotificationCallBack)
+          .handleNotificationOpened(didOpenRemoteNotificationCallBack)
+          .inFocusDisplaying(window.plugins.OneSignal.OSInFocusDisplayOption.None)
+          .iOSSettings(iosSettings)
+          .endInit();
+        
+window.plugins.OneSignal.getIds(function(ids) {
+ipush = ids.userId;
+localStorage.ipush=ipush;
+var ref = cordova.InAppBrowser.open('https://elecor.kz/?push='+ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+});
+        
     }
 };
