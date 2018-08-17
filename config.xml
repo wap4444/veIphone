@@ -38,8 +38,8 @@
         <icon height="58" platform="ios" src="res/icon/Icon-App-29x29@2x.png" width="58" />
         <icon height="87" platform="ios" src="res/icon/Icon-App-29x29@3x.png" width="87" />
         <icon platform="ios" src="res/icon/ItunesArtwork@2x.png" width="1024" height="1024" />
-        <splash src="res/screen/ios/Default@2x~universal~anyany.png" />
-        <splash src="res/screen/ios/Default@2x~universal~comany.png" />
+        <splash src="res/screen/ios/Default@2x~universal~anyany.jpg" />
+        <splash src="res/screen/ios/Default@2x~universal~comany.jpg" />
     </platform>
     <engine name="ios" spec="latest" />
     
