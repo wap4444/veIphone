@@ -19,7 +19,7 @@
 <plugin name="cordova-plugin-network-information" spec="1.2.1" />
 <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
 <plugin name="onesignal-cordova-plugin"  source="npm" />
-    
+<plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
     <platform name="ios">
         <icon height="57" platform="ios" src="res/icon/Icon-App-57x57@1x.png" width="57" />
         <icon height="114" platform="ios" src="res/icon/Icon-App-57x57@2x.png" width="114" />
