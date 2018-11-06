@@ -25,7 +25,9 @@ $("#BtnEnt" ).click(function() {
 var ref = cordova.InAppBrowser.open('http://elecor.controlsoft.kz/app/?push='+localStorage.ipush, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 });
         
-function didReceiveRemoteNotificationCallBack(jsonData) {}
+function didReceiveRemoteNotificationCallBack(jsonData) {
+var ref = cordova.InAppBrowser.open(jsonData.notification.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
+}
 function didOpenRemoteNotificationCallBack(jsonData) {
 var ref = cordova.InAppBrowser.open(jsonData.notification.payload.additionalData.ssylka, '_blank', 'location=no,toolbar=no,disallowoverscroll=yes');
 }     
