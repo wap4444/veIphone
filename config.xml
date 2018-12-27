@@ -8,17 +8,27 @@
         Kerri Shotts
     </author>
     <content src="index.html" />
+    
+    
+    
     <preference name="DisallowOverscroll" value="false" />
     <preference name="target-device" value="handset" />
     <preference name="orientation" value="portrait" />
-    <preference name="phonegap-version" value="cli-8.0.0" />
     
 <plugin name="cordova-plugin-device" spec="1.1.6" />
 <plugin name="cordova-plugin-device-orientation" spec="1.0.7" />
 <plugin name="cordova-plugin-inappbrowser" spec="3.0.0" />
 <plugin name="cordova-plugin-network-information" spec="1.2.1" />
 <plugin name="cordova-plugin-whitelist" spec="1.2.2" />
+    
+    
 <plugin name="onesignal-cordova-plugin"  source="npm" />
+<preference name="phonegap-version" value="cli-8.0.0" />
+<preference name="android-build-tool" value="gradle" />
+    
+    
+    
+    
 <plugin name="cordova-plugin-splashscreen" source="npm" spec="latest" />
     <platform name="ios">
         <icon height="57" platform="ios" src="res/icon/Icon-App-57x57@1x.png" width="57" />
